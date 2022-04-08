@@ -2,43 +2,90 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700;800&display=swap" rel="stylesheet">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | E-commerce product page</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
 <body>
+  <div class="overlay">
+    
+    <nav id="side-nav">
+      <button><img src="/images/icon-close.svg" alt="icon-close"></button>
+      <ul>
+        <li><a href="#">Collections</a></li>
+        <li><a href="#">Men</a></li>
+        <li><a href="#">Women</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <header>
+    <button class="btn-menu"><img src="images/icon-menu.svg" alt="icon-menu"></button>
+    
+    <img class="logo" src="/images/logo.svg" alt="logo">
+    <button class="btn-cart"><img src="/images/icon-cart.svg" alt="icon-cart" ></button>
+    <img class="img-avatar"src="images/image-avatar.png" alt="image-avatar">
+  </header>
+  <main>
 
-  Collections
-  Men
-  Women
-  About
-  Contact
+    <div class="col-left">
+      <div class="carousel">
+        <div class="carousel-item carousel-item-visible">
+            <img src="images/image-product-1.jpg" alt="image-product-1" style="max-width: 100%;"/>
+        </div>
+        <!-- <div class="carousel-item">
+            <img src="images/image-product-2.jpg" alt="image-product-2" />
+        </div>
+        <div class="carousel-item">
+            <img src="images/image-product-3.jpg" alt="image-product-3" />
+        </div>
+        <div class="carousel-item">
+          <img src="images/image-product-4.jpg" alt="image-product-4" /> 
+        </div>-->
 
-  Sneaker Company
+        <div class="carousel-actions">
+          <button class="btn-carousel" id="carousel-button-prev" aria-label="Previous Slide"><img class="icon-prev"src="images/icon-previous.svg" alt="icon-previous" ></button>
+          <button class="btn-carousel" id="carousel-button-next" aria-label="Next Slide"><img class="icon-next"src="images/icon-next.svg" alt="icon-next" ></button>
+        </div>
+      </div>
+        
+      
+    </div>
 
-  Fall Limited Edition Sneakers
+    <div class="col-right">
+      <h2>Sneaker Company</h2>  
+      <h1>Fall Limited Edition Sneakers</h1>
+      <p class="description">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+      <section class="price-section">
+        <p class="price">$125.00</p>
+        <p class="discount">50%</p>
+        <p class="old-price">$250.00</p>
+      </section>
+      <section class="count-section">
+        <button><img src="/images/icon-minus.svg" alt="icon-minus"></button>
+        <p class="item-count">0</p>
+        <button><img src="/images/icon-plus.svg" alt="icon-plus"></button>
+      </section>
+      <button class="btn-add-to-cart"><img class="icon-cart-white" src="/images/icon-cart-white.svg" alt="icon-cart-white">Add to cart</button>
+    </div>
 
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
+  </main>
 
-  $125.00
-  50%
-  $250.00
-
-  0
-  Add to cart
-  
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Nico Pom</a>.
   </div>
 </body>
+<script src="main.js"></script>
 </html>
