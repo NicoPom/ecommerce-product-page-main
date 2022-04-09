@@ -31,6 +31,7 @@ body{
 
 h1, h2, .price, .discount, .old-price, .item-count{
     font-weight: 800;
+    
 }
 
 h2, .discount{
@@ -57,6 +58,7 @@ h2{
 
 .old-price{
     color: var(--grayish-blue);
+    text-decoration: line-through 1px;
 }
 
 /*=====
@@ -90,6 +92,16 @@ button:active{
 
 .icon-prev{
     transform: translateX(-10%);
+}
+
+.btn-count::after { /*bigger clickable area*/
+    content: "";
+    position: absolute;
+
+    width: 25px;
+    height: 25px;
+    transform: translate(-25%, -30%);
+    z-index: 300;
 }
 
 .btn-main-action{
@@ -298,6 +310,10 @@ header{
     position: relative;
 }
 
+.carousel-list{
+    display: none;
+}
+
 .carousel-item,
 .carousel-item-hidden{
     display: none;
@@ -369,6 +385,10 @@ h1{
 
 @media screen and (min-width : 900px){
 
+    html{
+        font-size: 110%;
+    }
+
     .container{
         width: 90%;
         margin: 0 auto;
@@ -377,23 +397,35 @@ h1{
     .overlay, .btn-menu{
         display: none;
     }
+
+    /*===
+    TYPO
+    ====*/
+
+    h1{
+        font-size: 2.5rem;
+        
+    }
     /*==== 
     LAYOUT 
     =====*/
-    main {
-        display: flex;
-    }
 
     header{
         padding: 2rem;
         border-bottom: 2px solid var(--light-grayish-blue);
     }
 
-    footer {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
+    main {
+        display: flex;
+        margin: 5rem auto;
+        background: rgb(187, 221, 239);
+        justify-content: space-around;
+        align-items: center;
+    }
+
+
+    .logo{
+        align-self: center;
     }
 
     .desktop-nav {
@@ -427,7 +459,80 @@ h1{
         width: 40px;
     }
 
+    .col-left, .col-right{
+        width: 40%;
+    }
 
+    .carousel-img{
+        aspect-ratio: 1/1.05;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+    .carousel-actions{
+        display: none;
+    }
+
+    .carousel-list{
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .carousel-list img{
+        width: 20%;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .carousel-list img:hover,
+    .btn-main-action:hover,
+    .btn-count:hover
+    {
+        filter: opacity(0.5);
+    }
     
+    .col-right{
+        padding: 0;
+    }
+
+    .description{
+        margin-top: 2rem;
+    }
+
+    .price-section{
+        width: 190px;
+        flex-wrap: wrap;
+    }
+
+    .old-price{
+        margin-left: 0;
+        margin-top : 0.7rem
+    }
+
+    .col-right-footer{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .count-section{
+        margin: 0;
+        width: 37%;
+    }
+
+    .btn-add-to-cart{
+        width: 60%;
+    }
+    /*====
+    BASKET
+    ======*/
     
+    .basket{
+        width: 400px; 
+        box-shadow: 0px 13px 22px 1px rgba(0,0,0,0.72); 
+        top: 100px;
+        left: 100%;
+        transform: translateX(-110%);
+    }
 }
