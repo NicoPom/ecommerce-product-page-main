@@ -20,15 +20,22 @@ btnClose.addEventListener("click", () => {
 // CAROUSEL
 
 let slides = document.querySelectorAll(".carousel .carousel-item");
+const btnNext = document.querySelectorAll(".carousel-button-next");
+const btnPrev = document.querySelectorAll(".carousel-button-prev");
 let slidePosition = 0;
 const totalSlides = slides.length;
 
-document
-    .getElementById("carousel-button-next")
-    .addEventListener("click", moveToNextSlide);
-document
-    .getElementById("carousel-button-prev")
-    .addEventListener("click", moveToPrevSlide);
+btnNext.forEach((el) => {
+    el.addEventListener("click", () => {
+        moveToNextSlide();
+    });
+});
+
+btnPrev.forEach((el) => {
+    el.addEventListener("click", () => {
+        moveToPrevSlide();
+    });
+});
 
 function hideAllSlides() {
     for (let slide of slides) {
@@ -84,21 +91,23 @@ const btnCloseLightbox = document.getElementById("btn-close-lightbox");
 const overlayLightbox = document.getElementById("overlay-lightbox");
 
 //open and close lightbox
-if (window.innerWidth >= 900) {
-    slides.forEach((slide) => {
-        slide.addEventListener("click", () => {
+
+slides.forEach((slide) => {
+    slide.addEventListener("click", () => {
+        if (window.innerWidth >= 900) {
             overlayLightbox.style.display = "grid";
             slides = document.querySelectorAll(
                 ".carousel-lightbox .carousel-item"
             );
-        });
+        }
     });
+});
 
-    btnCloseLightbox.addEventListener("click", () => {
-        overlayLightbox.style.display = "none";
-        slides = document.querySelectorAll(".carousel .carousel-item");
-    });
-}
+btnCloseLightbox.addEventListener("click", () => {
+    overlayLightbox.style.display = "none";
+    slides = document.querySelectorAll(".carousel .carousel-item");
+});
+
 //lightbox carousel
 
 // BASKET
