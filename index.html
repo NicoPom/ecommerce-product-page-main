@@ -142,7 +142,7 @@
             <!--Basket -->
             <div class="basket" id="basket">
                 <h3>Cart</h3>
-                <div class="basket-main">
+                <div id="basket-main" class="basket-main">
                     <img
                         class="basket-item-img"
                         src="images/image-product-1-thumbnail.jpg"
@@ -150,10 +150,11 @@
                     />
                     <div class="basket-detail">
                         <h4>Autumn Limited Edition Sneakers</h4>
-                        <p>$125.00 x 3</p>
-                        <p id="total-price" class="price total-price">
-                            $375.00
+                        <p>
+                            $<span id="price">125.00</span> x
+                            <span id="basket-count"></span>
                         </p>
+                        <p id="total-price" class="price total-price"></p>
                     </div>
                     <button id="btn-delete" class="btn-delete">
                         <img src="images/icon-delete.svg" alt="icon-delete" />
@@ -167,7 +168,9 @@
                         Checkout
                     </button>
                 </div>
-                <div class="empty-basket">Your cart is empty.</div>
+                <div id="empty-basket" class="empty-basket">
+                    Your cart is empty.
+                </div>
             </div>
 
             <!--Main Page-->
@@ -189,6 +192,7 @@
                 </nav>
 
                 <button id="btn-cart" class="btn-cart">
+                    <div id="badge" class="badge">1</div>
                     <img src="images/icon-cart.svg" alt="icon-cart" />
                 </button>
                 <button>
@@ -298,21 +302,24 @@
                     </section>
                     <div class="col-right-footer">
                         <section class="count-section">
-                            <button class="btn-count minus">
+                            <button id="btn-minus" class="btn-count minus">
                                 <img
                                     src="images/icon-minus.svg"
                                     alt="icon-minus"
                                 />
                             </button>
-                            <p class="item-count">0</p>
-                            <button class="btn-count plus">
+                            <p id="item-count" class="item-count">0</p>
+                            <button id="btn-plus" class="btn-count plus">
                                 <img
                                     src="images/icon-plus.svg"
                                     alt="icon-plus"
                                 />
                             </button>
                         </section>
-                        <button class="btn-main-action btn-add-to-cart">
+                        <button
+                            id="btn-add-to-cart"
+                            class="btn-main-action btn-add-to-cart"
+                        >
                             <img
                                 class="icon-cart-white"
                                 src="images/icon-cart-white.svg"
