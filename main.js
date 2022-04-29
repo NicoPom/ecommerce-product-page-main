@@ -47,11 +47,7 @@ function hideAllSlides() {
 function moveToNextSlide() {
     hideAllSlides();
 
-    if (slidePosition === totalSlides - 1) {
-        slidePosition = 0;
-    } else {
-        slidePosition++;
-    }
+    slidePosition === totalSlides - 1 ? (slidePosition = 0) : slidePosition++;
 
     slides[slidePosition].classList.add("carousel-item-visible");
 }
@@ -59,11 +55,7 @@ function moveToNextSlide() {
 function moveToPrevSlide() {
     hideAllSlides();
 
-    if (slidePosition === 0) {
-        slidePosition = totalSlides - 1;
-    } else {
-        slidePosition--;
-    }
+    slidePosition === 0 ? (slidePosition = totalSlides - 1) : slidePosition--;
 
     slides[slidePosition].classList.add("carousel-item-visible");
 }
@@ -129,11 +121,7 @@ btnPlus.addEventListener("click", () => {
 });
 
 btnMinus.addEventListener("click", () => {
-    if (cartLoad <= 0) {
-        cartLoad = 0;
-    } else {
-        cartLoad--;
-    }
+    cartLoad <= 0 ? (cartLoad = 0) : cartLoad--;
 
     itemCount.textContent = cartLoad;
 });
@@ -177,5 +165,7 @@ const btnDelete = document.getElementById("btn-delete");
 
 btnDelete.addEventListener("click", () => {
     cartLoad = 0;
+    itemCount.textContent = cartLoad;
     renderCartContent();
+    basket.classList.toggle("visible");
 });
