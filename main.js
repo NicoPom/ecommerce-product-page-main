@@ -137,7 +137,11 @@ const totalPriceEl = document.getElementById("total-price");
 const badge = document.getElementById("badge");
 
 btnAddToCart.addEventListener("click", () => {
-    renderCartContent();
+    if (cartLoad > 0) {
+        renderCartContent();
+        cartLoad = 0;
+        itemCount.textContent = cartLoad;
+    }
 });
 
 function renderCartContent() {
